@@ -1,0 +1,48 @@
+# --- System / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Python & Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# --- Terraform (Infrastructure) ---
+# Local state and plugins
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+
+# SECRETS - Never commit these!
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+
+# --- Data Layer ---
+# Do not commit the Yelp dataset files
+*.json
+*.csv
+*.parquet
+data/
+raw_data/
+temp/
+
+# --- Azure Data Factory (ADF) ---
+# If you export ARM templates locally
+/orchestration/arm_templates/
+*.publish.config.json
+
+# --- Logs ---
+*.log
+ingestion_stats.json
