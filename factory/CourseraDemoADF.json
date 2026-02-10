@@ -1,9 +1,0 @@
-{
-	"name": "CourseraDemoADF",
-	"location": "westus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "649113e3-0c50-48f2-a15f-276e4db26998",
-		"tenantId": "f9bfed4f-aecf-4436-a9db-37f127aed8b2"
-	}
-}
