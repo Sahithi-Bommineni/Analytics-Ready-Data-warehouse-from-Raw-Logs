@@ -1,0 +1,9 @@
+{
+	"name": "DF-YELP-REVIEW",
+	"location": "westcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7ba777eb-f071-4f70-8916-a10e1bd26a94",
+		"tenantId": "f9bfed4f-aecf-4436-a9db-37f127aed8b2"
+	}
+}
