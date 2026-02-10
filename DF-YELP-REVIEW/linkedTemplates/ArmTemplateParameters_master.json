@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-yelp-review"
+		},
+		"Snowflake1_password": {
+			"value": ""
+		},
+		"Snowflake1_properties_typeProperties_database": {
+			"value": "YELP_DB"
+		},
+		"Snowflake1_properties_typeProperties_role": {
+			"value": "SYSADMIN"
+		},
+		"Snowflake1_properties_typeProperties_host": {
+			"value": "VEORIFZ-SHB99897.snowflakecomputing.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
