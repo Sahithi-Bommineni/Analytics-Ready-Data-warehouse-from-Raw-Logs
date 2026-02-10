@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Script1",
-				"type": "Script",
+				"name": "CDACT_RAW_DATA_",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -14,20 +14,54 @@
 					"secureInput": false
 				},
 				"userProperties": [],
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
 				"typeProperties": {
-					"scripts": [
-						{
-							"type": "Query",
-							"text": "COPY INTO YELP_DB.BRONZE.REVIEW_DATA(raw_data,file_name) FROM @YELP_DB.BRONZE.S3_YELP_STAGE/raw/review.json.gz FILE_FORMAT = (TYPE='JSON' STRIP_OUTER_ARRAY=TRUE) ON_ERROR = 'CONTINUE';"
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AmazonS3ReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
 						}
-					],
-					"scriptBlockExecutionTimeout": "02:00:00",
-					"treatDecimalAsString": false
-				}
+					},
+					"sink": {
+						"type": "SnowflakeV2Sink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand",
+							"storageIntegration": "S3_RETAIL_INTEGRATION"
+						}
+					},
+					"enableStaging": true,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['One_Column']"
+								},
+								"sink": {
+									"name": "RAW_DATA",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_YELP_REVIEW_JSON",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_YELP_SNOWFLAKE",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
