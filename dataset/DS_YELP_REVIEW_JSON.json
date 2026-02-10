@@ -1,0 +1,24 @@
+{
+	"name": "DS_YELP_REVIEW_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_YELP_AmazonS3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AmazonS3Location",
+				"bucketName": "yelp-raw-data-sahithi",
+				"folderPath": "raw",
+				"fileName": "review.json.gz"
+			},
+			"compression": {
+				"type": "gzip",
+				"level": "Optimal"
+			}
+		},
+		"schema": {}
+	}
+}
