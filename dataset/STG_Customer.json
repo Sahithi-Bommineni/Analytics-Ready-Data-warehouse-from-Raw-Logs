@@ -1,0 +1,31 @@
+{
+	"name": "STG_Customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLServer_Coursera",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Customer_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Customer_name",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "STG_customer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

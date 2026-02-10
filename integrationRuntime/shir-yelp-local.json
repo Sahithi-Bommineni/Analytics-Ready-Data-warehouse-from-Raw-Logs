@@ -1,0 +1,7 @@
+{
+	"name": "shir-yelp-local",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Creating shir to connect to the local system."
+	}
+}
