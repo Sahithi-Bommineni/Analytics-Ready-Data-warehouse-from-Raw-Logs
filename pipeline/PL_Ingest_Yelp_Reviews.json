@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CDACT_RAW_DATA_",
+				"name": "CDAC_YELP_SNOWFLAKE",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -29,30 +29,37 @@
 					"sink": {
 						"type": "SnowflakeV2Sink",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand",
-							"storageIntegration": "S3_RETAIL_INTEGRATION"
+							"type": "SnowflakeImportCopyCommand"
 						}
 					},
 					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "LS_STAGING",
+							"type": "LinkedServiceReference"
+						},
+						"path": "yelp"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
 							{
 								"source": {
-									"path": "$['One_Column']"
-								},
-								"sink": {
-									"name": "RAW_DATA",
-									"type": "String"
+									"path": "$['Column_1']"
 								}
 							}
-						],
-						"collectionReference": ""
+						]
 					}
 				},
 				"inputs": [
 					{
 						"referenceName": "DS_YELP_REVIEW_JSON",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_YELP_SNOWFLAKE",
 						"type": "DatasetReference"
 					}
 				]
