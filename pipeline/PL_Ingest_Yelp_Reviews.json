@@ -55,12 +55,6 @@
 						"referenceName": "DS_YELP_REVIEW_JSON",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DS_YELP_SNOWFLAKE",
-						"type": "DatasetReference"
-					}
 				]
 			}
 		],
