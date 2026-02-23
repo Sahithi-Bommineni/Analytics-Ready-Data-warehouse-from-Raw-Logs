@@ -2,7 +2,7 @@
 	"name": "DS_YELP_SNOWFLAKE",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Snowflake1",
+			"referenceName": "LS_Yelp_Snowflake",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
