@@ -29,7 +29,12 @@
 					"sink": {
 						"type": "SnowflakeV2Sink",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
+							"type": "SnowflakeImportCopyCommand",
+							"additionalFormatOptions": {
+								"TYPE": "JSON",
+								"STRIP_OUTER_ARRAY": "TRUE"
+							},
+							"storageIntegration": "AZURE_STORAGE_INTEGRATION"
 						}
 					},
 					"enableStaging": true,
